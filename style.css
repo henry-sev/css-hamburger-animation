@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* html {
+  height: 100%;
+} */
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #333;
+}
+
+.menu_btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  /* border: 5px solid #fff; */
+  transition: all 0.5s ease-in-out;
+}
+
+.menu_btn_burger {
+  height: 6px;
+  width: 80px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgb(255, 101, 47, 0.2);
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.menu_btn_burger::before,
+.menu_btn_burger::after {
+  position: absolute;
+  content: "";
+  height: 6px;
+  width: 80px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgb(255, 101, 47, 0.2);
+  transition: all 0.5s ease-in-out;
+}
+
+.menu_btn_burger::before {
+  transform: translateY(-20px);
+}
+
+.menu_btn_burger::after {
+  transform: translateY(20px);
+}
+
+/* Animation */
+.menu_btn.open .menu_btn_burger {
+  transform: translateX(-50px);
+  background: transparent; /*透明 = rgba(0,0,0,0)*/
+  box-shadow: none;
+}
+
+.menu_btn.open .menu_btn_burger::before {
+  transform: translateX(50px) rotate(45deg);
+}
+
+.menu_btn.open .menu_btn_burger::after {
+  transform: rotate(-45deg) translate(35px, 35px);
+}
